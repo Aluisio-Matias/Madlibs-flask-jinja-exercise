@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Mad Libs{% endblock %}
+
+{% block content %}
+<h1 class="display-2 fw-bold me-0">MAD LIBS</h1>
+<p class="h4 mt-3 mb-3">Select your story's template.</p>
+<form action="/words">
+    <select name='story_id' class="form-select form-select-lg mb-3 w-25" aria-label=".form-select-lg example">
+        {% for story in stories %}
+        <option value='{{story.code}}'>
+            {{story.title}}
+        </option>
+        {% endfor %}
+        
+    </select>
+    <button class="btn btn-primary me-0 mb-3">Go!</button>
+</form>
+
+<img class='img-thumbnail d-block' 
+src="https://curric.rithmschool.com/springboard/exercises/flask-madlibs/_images/madlibs.jpg" 
+alt="...">
+
+{% endblock %}

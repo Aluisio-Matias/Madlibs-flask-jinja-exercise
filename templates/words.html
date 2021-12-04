@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Mad Libs{% endblock %}
+
+{% block content %}
+
+<h1 class="display-2 fw-bold me-0">MAD LIBS</h1>
+       <p class="h4 mt-3 mb-5">Questions for {{title}}</p>
+
+    <form action='/story'>
+       {% for prompt in prompts %}
+       <div class="form-floating mb-3 w-25 me-0">
+              <input required type="text"  name='{{prompt}}' class='form-control text-lowercase' id="floatingInput">
+              <label for="floatingInput">{{prompt}}:</label>
+       </div>
+       {% endfor %}
+       <input type='hidden' name='story_id' value='{{story_id}}'>
+
+       <button type="submit" class="btn btn-primary me-0">Submit Story!</button>
+
+    </form>
+    {% endblock %}
+
+    
+    <!-- code below was from the basic inputs version -->
+
+     <!-- <div class="form-floating mb-3 w-25 me-0">
+            <input type="text" name='place' class='form-control' id="floatingInput">
+            <label for="floatingInput">Place:</label>
+     </div>
+
+     <div class="form-floating mb-3 w-25 me-0">
+            <input type="text" name='noun' class='form-control' id="floatingInput">
+            <label for='floatingInput'>Noun:</label>
+     </div>
+        
+     <div class="form-floating mb-3 w-25 me-0">
+            <input type="text" name='verb' class='form-control' id="floatingInput">
+            <label for='floatingInput'>Verb:</label>
+     </div>
+
+     <div class="form-floating mb-3 w-25 me-0">
+            <input type="text" name='adjective' class='form-control' id="floatingInput">
+            <label for='floatingInput'>Adjective:</label>
+     </div>
+
+     <div class="form-floating mb-3 w-25 me-0">
+            <input type="text" name='plural_noun' class='form-control' id="floatingInput">
+            <label for='floatingInput'>Plural Noun:</label>
+     </div> -->
+ 
+        
+
+
+
